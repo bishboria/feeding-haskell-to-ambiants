@@ -17,7 +17,7 @@ Run the following on the command line:
 
 ## Compiling:
 
-    ghc --make Main.hs
+    ghc -O2 --make Main.hs
 
 
 ## Information
