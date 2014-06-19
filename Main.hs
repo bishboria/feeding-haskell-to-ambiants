@@ -19,11 +19,10 @@ main = do
     let i  = read (args !! 3) :: Int
         rs = readBrainState $ lines rb
         bs = readBrainState $ lines bb
-        w  = parse (mkWorld rs bs 12345) s
-        aw = take i $ go w
-        lw = last aw
-    printInfo w
-    printInfo lw
+        firstWorld = parse (mkWorld rs bs 12345) s
+        lastWorld  = last $ take i $ go firstWorld
+    printInfo firstWorld
+    printInfo lastWorld
 
 printInfo w = do
     putStrLn $ render w
